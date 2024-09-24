@@ -1,0 +1,161 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #F5F5F5;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.profile-header img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.profile-header h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+.profile-header h2 {
+    font-size: 18px;
+    color: #7F8C8D;
+    margin: 5px 0;
+}
+
+.services {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.service-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #E0E0E0;
+}
+
+.service-item:last-child {
+    border-bottom: none;
+}
+
+.service-item span {
+    font-size: 16px;
+}
+
+.service-item .price {
+    color: #27AE60;
+    font-size: 16px;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 20px;
+}
+
+.cta-buttons button {
+    background-color: #3498DB;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.cta-buttons button:hover {
+    background-color: #2980B9;
+}
+
+/* Estilos para el contenedor de horarios */
+#selectScheduleCard {
+    display: none;
+    background-color: #1f2d3d;
+    border-radius: 10px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    padding: 20px;
+    font-family: 'Poppins', sans-serif;
+    color: #ecf0f1;
+    margin: 20px auto;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.date-card {
+    background-color: #34495e;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    margin-right: 10px;
+    width: 70px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.date-card.selected {
+    background-color: #2980b9;
+    color: #ecf0f1;
+}
+
+.date-card p {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.date-card small {
+    font-size: 0.8rem;
+    color: #bdc3c7;
+}
+
+.btn-gradient {
+    font-size: 1.2rem;
+    font-weight: bold;
+    background: linear-gradient(135deg, #1abc9c 0%, #3498db 100%);
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+#continueBtn i {
+    margin-left: 10px;
+}
+
+#loadingBar {
+    width: 0%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.2);
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: width 1.5s ease;
+}

@@ -1,0 +1,282 @@
+/* App.css */
+
+/* Definición de Variables de CSS para la Paleta de Colores */
+:root {
+  --color-background: #1212121a;
+  --color-container: #1e1e1ed8;
+  --color-text-primary: #e0e0e0;
+  --color-text-secondary: #b0b0b0;
+  --color-accent: #e0e0e0;
+  /* Verde Vibrante */
+  --color-accent-hover: #06524b;
+  --color-border: #333333;
+  --color-status-open: #06524b;
+  --color-status-closed: #e74c3c;
+  --color-service-hover: #2c2c2c;
+  --color-button: #06524b;
+  --color-button-hover: #06524b;
+}
+
+/* Reset de Margen y Padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-image: url('/src/peluqueros/fondo.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: var(--color-text-primary);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 20px;
+  position: relative;
+}
+
+/* Opcional: Agregar un Overlay Oscuro para Mejorar la Legibilidad */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  padding: 30px;
+  background-color: rgba(30, 30, 30, 0.9);
+  border-radius: 10px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  color: var(--color-text-primary);
+}
+
+/* Header de la Sucursal */
+.branch-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.branch-header img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid var(--color-accent);
+}
+
+.branch-info {
+  flex-grow: 1;
+  padding-left: 25px;
+}
+
+.branch-info h1 {
+  font-size: 32px;
+  margin-bottom: 5px;
+  color: var(--color-accent);
+}
+
+.branch-info h2 {
+  font-size: 24px;
+  color: var(--color-text-secondary);
+}
+
+.status {
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-weight: bold;
+  text-align: center;
+  color: #fff;
+}
+
+.status.open {
+  background-color: var(--color-status-open);
+}
+
+.status.closed {
+  background-color: var(--color-status-closed);
+}
+
+/* Títulos Centrados */
+.text-center {
+  text-align: center;
+  margin: 20px 0;
+  color: var(--color-text-primary);
+}
+
+.mt-5 {
+  margin-top: 3rem;
+}
+
+/* Lista de Profesionales */
+.professional-list {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  padding: 20px 0;
+  margin: 20px 0;
+}
+
+.professional {
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.professional:hover {
+  transform: translateY(-10px);
+}
+
+.professional img {
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  object-fit: cover;
+  border: 3px solid var(--color-accent);
+}
+
+.professional img:hover {
+  transform: scale(1.05);
+}
+
+.professional span {
+  display: block;
+  margin-top: 15px;
+  font-weight: 500;
+  color: var(--color-text-primary);
+}
+
+/* Lista de Servicios */
+.service-list {
+  padding: 0;
+  list-style: none;
+}
+
+.service-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  border-bottom: 1px solid var(--color-border);
+  transition: background-color 0.3s;
+}
+
+.service-list li:last-child {
+  border-bottom: none;
+}
+
+.service-list li:hover {
+  background-color: var(--color-service-hover);
+}
+
+.service-price {
+  font-weight: bold;
+  color: var(--color-accent);
+}
+
+.arrow {
+  font-size: 20px;
+  cursor: pointer;
+  transition: color 0.3s;
+  color: var(--color-accent);
+}
+
+.arrow:hover {
+  color: var(--color-text-primary);
+}
+
+/* Estilos del Modal */
+.peluquero-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  border: 2px solid var(--color-accent);
+}
+
+.peluquero-img:hover {
+  transform: scale(1.05);
+}
+
+.btn-no-preference {
+  background-color: var(--color-button)!important;
+  color: #fff;
+  width: 80%;
+  padding: 12px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-no-preference:hover {
+  background-color: var(--color-button-hover)!important;
+  transform: translateY(-3px);
+}
+
+/* Accordion de Servicios */
+.accordion-button {
+  background-color: var(--color-container) !important;
+  color: var(--color-text-primary) !important;
+  border: 1px solid var(--color-border) !important;
+  border-radius: 8px !important;
+  padding: 15px 20px !important;
+  font-size: 18px;
+}
+
+.accordion-button:focus {
+  box-shadow: none !important;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: var(--color-service-hover) !important;
+}
+
+.accordion-item {
+  background-color: var(--color-container) !important;
+  border: 1px solid var(--color-border) !important;
+  border-radius: 8px !important;
+  margin-bottom: 15px;
+}
+
+.accordion-body {
+  background-color: var(--color-container) !important;
+  color: var(--color-text-primary) !important;
+}
+
+/* Spinner de Cargando */
+.spinner-border {
+  width: 3rem;
+  height: 3rem;
+}
+
+.modal-content {
+  background-color: #1e1e1e !important; /* Color de fondo */
+  color: var(--color-text-primary)!important; /* Color del texto, usa una variable si es necesario */
+  padding: 20px;
+  border-radius: 8px; /* Esquinas redondeadas para un diseño más moderno */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
+}

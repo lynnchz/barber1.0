@@ -2,24 +2,27 @@
 import React from 'react';
 import Spinner from 'react-bootstrap/Spinner';
 
-const ProfessionalList = ({ barbers, loading, openProfessionalModal }) => {
+const ProfessionalList = ({ barbers, loading, openBarberDetailModal }) => {
   return (
     <div className="professional-list">
       {loading ? (
         <Spinner animation="border" variant="light" />
       ) : barbers.length > 0 ? (
-        barbers.map((peluquero) => (
-          <div className="professional" key={peluquero.id}>
+        barbers.map((barber) => (
+          <div
+            className="professional"
+            key={barber.id}
+            onClick={() => openBarberDetailModal(barber)} // Usar openBarberDetailModal aquí
+          >
             <img
-              src={peluquero.imagen || `/peluqueros/default.jpg`}
-              alt={peluquero.nombre || `Peluquero ${peluquero.id}`}
-              onClick={() => openProfessionalModal(peluquero.nombre)}
+              src={barber.imagen || `/peluqueros/default.jpg`}
+              alt={barber.nombre}
             />
-            <span>{peluquero.nombre}</span>
+            <p>{barber.nombre}</p>
           </div>
         ))
       ) : (
-        <p className="text-center">No se encontraron profesionales disponibles.</p>
+        <p>No se encontraron profesionales disponibles.</p>
       )}
     </div>
   );
